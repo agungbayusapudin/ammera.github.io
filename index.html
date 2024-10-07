@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load Google API client and auth2 libraries -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
+  <!-- Meta tag for Google Sign-In -->
+  <meta name="google-signin-client_id" content="704948617465-pllqv5uimh5adbsjfnlchgitp19c7bmh.apps.googleusercontent.com">
+
+  <script>
+    function onLoad() {
+      // Load Google Auth2 and client libraries
+      gapi.load('auth2', function() {
+        gapi.auth2.init().then(function() {
+          console.log('Google Auth2 initialized.');
+        });
+      });
+
+      gapi.load('client', function() {
+        gapi.client.init({
+          apiKey: 'AIzaSyA4Roou4pmLYG6IqQ_oh2rmCDWPOGPDjEM',
+          discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+        }).then(function () {
+          console.log('GAPI client loaded for API');
+        }, function(error) {
+          console.log('Error loading GAPI client for API:', error);
+        });
+      });
+    }
+  </script>
+
+  <!-- Other standard meta tags -->
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="flutter_firebase_app">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Title -->
+  <title>flutter_firebase_app</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body onload="onLoad()">
+  <!-- Load Flutter -->
+  <script src="flutter_bootstrap.js" async></script>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyA4Roou4pmLYG6IqQ_oh2rmCDWPOGPDjEM",
+      authDomain: "flutter-e4ea0.firebaseapp.com",
+      projectId: "flutter-e4ea0",
+      storageBucket: "flutter-e4ea0.appspot.com",
+      messagingSenderId: "704948617465",
+      appId: "1:704948617465:web:449acd0ab6e761143aa228",
+      measurementId: "G-3J884JTLSV"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
