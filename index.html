@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+  <!-- Load Google API client and auth2 libraries -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
+  <!-- Meta tag for Google Sign-In -->
+  <meta name="google-signin-client_id" content="704948617465-pllqv5uimh5adbsjfnlchgitp19c7bmh.apps.googleusercontent.com">
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
+  <!-- Other standard meta tags -->
   <base href="/">
-  <meta name="google-signin-client_id" content="704948617465-pllqv5uimh5adbsjfnlchgitp19c7bmh.apps.googleusercontent.com”>
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
@@ -23,17 +16,21 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="responsive_web">
+  <meta name="apple-mobile-web-app-title" content="flutter_firebase_app">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>responsive_web</title>
+  <!-- Title -->
+  <title>flutter_firebase_app</title>
   <link rel="manifest" href="manifest.json">
 </head>
-<body>
+
+<body onload="onLoad()">
+  <!-- Load Flutter -->
   <script src="flutter_bootstrap.js" async></script>
+  <script src="main.dart.js" type="application/javascript"></script>
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
